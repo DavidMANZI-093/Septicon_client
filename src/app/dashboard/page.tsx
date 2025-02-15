@@ -24,7 +24,7 @@ const Dashboard = (/* props: Props, children: React.ReactNode */) => {
 
   return (
     <Layout>
-      <div className='relative flex flex-col w-full h-full gap-2 blur-[2px] pr-0.5 overflow-y-auto'>
+      <div className='relative flex flex-col w-full h-full gap-2 pr-0.5 overflow-y-auto'>
         {/* {children} */}
         <SwapyBox />
         {/* <div className="relative flex min-h-full w-full btn-gradient"></div> */}
