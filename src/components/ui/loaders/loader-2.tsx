@@ -15,5 +15,5 @@ export default function Loader2() {
 
   }, [])
 
-  return <l-jelly-triangle className="scale-75 m-auto" color="#4338ca"></l-jelly-triangle>
+  return <l-jelly-triangle className="scale-75" color="#4338ca"></l-jelly-triangle>
 }
