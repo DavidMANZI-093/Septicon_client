@@ -198,8 +198,8 @@ const Actions = (props: Props) => {
           <PackagePlus className='relative flex transition-all text-green-800' size={20} />
           <p className='relative flex text-sm font-medium transition-all'>Replenish Items</p>
         </button>
-        <button onClick={() => { setItemRepState(false); setItemAddState(false); setItemSupState(true) }} className='relative flex w-fit h-fit text-blue-700 gap-2 rounded border border-zinc-800 py-1.5 px-2.5 items-center justify-center shadow-md shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
-          <PackageMinus className='relative flex transition-all text-blue-800' size={20} />
+        <button onClick={() => { setItemRepState(false); setItemAddState(false); setItemSupState(true) }} className='relative flex w-fit h-fit text-orange-700 gap-2 rounded border border-zinc-800 py-1.5 px-2.5 items-center justify-center shadow-md shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
+          <PackageMinus className='relative flex transition-all text-orange-800' size={20} />
           <p className='relative flex text-sm font-medium transition-all'>Supply Items</p>
         </button>
         <button onClick={() => { setItemRepState(false); setItemAddState(true); setItemSupState(false) }} className='relative flex w-fit h-fit text-blue-700 gap-2 rounded border border-zinc-800 py-1.5 px-2.5 items-center justify-center shadow-md shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
