@@ -1,6 +1,6 @@
 "use client";
 
-import Loader from '@/components/ui/loader';
+import Loader from '@/components/ui/loaders/loader-1';
 import React from 'react';
 
 // type Props = {}

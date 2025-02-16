@@ -1,0 +1,19 @@
+import React from 'react';
+import type {} from 'ldrs';
+import { useEffect } from 'react'
+
+export default function Loader2() {
+
+  useEffect(() => {
+
+    async function getLoader() {
+      const { jellyTriangle } = await import('ldrs');
+      jellyTriangle.register();
+    }
+
+    getLoader();
+
+  }, [])
+
+  return <l-jelly-triangle className="scale-75 m-auto" color="#4338ca"></l-jelly-triangle>
+}

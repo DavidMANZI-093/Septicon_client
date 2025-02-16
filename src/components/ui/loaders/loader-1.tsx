@@ -2,7 +2,7 @@ import React from 'react';
 import type {} from 'ldrs';
 import { useEffect } from 'react'
 
-export default function Loader() {
+export default function Loader1() {
 
   useEffect(() => {
 

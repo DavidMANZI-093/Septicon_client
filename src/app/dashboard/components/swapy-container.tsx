@@ -6,11 +6,11 @@ import BarChartEx from '@/components/re-charts/brush-barchart';
 import RadarChartEx from '@/components/re-charts/domain-radarchart';
 import RadialBarChartEx from '@/components/re-charts/radial-barchart';
 import AreaChartEx from '@/components/re-charts/stacked-areachart';
-import Loader from '@/components/ui/loader';
 import React, { useEffect, useRef } from 'react';
 import { createSwapy, Swapy } from 'swapy';
 import useLoadKiller from '@/hooks/loaddestroyer';
 import Gripper from '@/components/ui/gripper';
+import Loader1 from '@/components/ui/loaders/loader-1';
 
 const SwapyBox = () => {
 
@@ -43,7 +43,7 @@ const SwapyBox = () => {
             <div className='relative grid btn-gradient4 rounded-md transition-all' data-swapy-slot='a'>
                 <div className='relative flex bg-zinc-950 min-h-64 flex-col gap-2 p-2 rounded-md' data-swapy-item='a'>
                     {(isLoading ?
-                        <Loader />
+                        <Loader1 />
                         :
                         <>
                             <AreaChartEx />
@@ -57,7 +57,7 @@ const SwapyBox = () => {
             <div className='relative grid btn-gradient4 rounded-md transition-all' data-swapy-slot='b'>
                 <div className='relative flex bg-zinc-950 min-h-64 flex-col gap-2 p-2 rounded-md' data-swapy-item='b'>
                     {(isLoading ?
-                        <Loader />
+                        <Loader1 />
                         :
                         <>
                             <LineChartEx />
@@ -71,7 +71,7 @@ const SwapyBox = () => {
             <div className='relative grid btn-gradient4 rounded-md transition-all' data-swapy-slot='c'>
                 <div className='relative flex bg-zinc-950 min-h-64 flex-col gap-2 p-2 rounded-md' data-swapy-item='c'>
                     {(isLoading ?
-                        <Loader />
+                        <Loader1 />
                         :
                         <>
                             <PieChartEx />
@@ -85,7 +85,7 @@ const SwapyBox = () => {
             <div className='relative grid btn-gradient4 rounded-md transition-all' data-swapy-slot='d'>
                 <div className='relative flex bg-zinc-950 min-h-64 flex-col gap-2 p-2 rounded-md' data-swapy-item='d'>
                     {(isLoading ?
-                        <Loader />
+                        <Loader1 />
                         :
                         <>
                             <RadarChartEx />
@@ -99,7 +99,7 @@ const SwapyBox = () => {
             <div className='relative grid btn-gradient4 rounded-md transition-all' data-swapy-slot='e'>
                 <div className='relative flex bg-zinc-950 min-h-64 flex-col gap-2 p-2 rounded-md' data-swapy-item='e'>
                     {(isLoading ?
-                        <Loader />
+                        <Loader1 />
                         :
                         <>
                             <RadialBarChartEx />
@@ -113,7 +113,7 @@ const SwapyBox = () => {
             <div className='relative grid btn-gradient4 rounded-md transition-all' data-swapy-slot='f'>
                 <div className='relative flex bg-zinc-950 min-h-64 flex-col gap-2 p-2 rounded-md' data-swapy-item='f'>
                     {(isLoading ?
-                        <Loader />
+                        <Loader1 />
                         :
                         <>
                             <BarChartEx />

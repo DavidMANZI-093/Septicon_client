@@ -9,7 +9,7 @@ import { DataTable } from '../../UI Components/Items/data-table';
 import { columns } from '../../UI Components/Items/columns';
 import { fetchItems } from '../../fetchers/items';
 import { fetchInventory } from '../../fetchers/inventory';
-import Loader from '@/components/ui/loader';
+import Loader from '@/components/ui/loaders/loader-1';
 import Actions from '../../UI Components/actions';
 import { fetchStations } from '../../fetchers/stations';
 
