@@ -5,7 +5,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import useShowPass from '@/hooks/passhider';
 import useRunSpinner from '@/hooks/spinrunner';
-import { Container, Eye, EyeOff, FileMinus2, FilePlus2, KeyRound, PackagePlus, ShieldClose, X } from 'lucide-react';
+import { Container, Eye, EyeOff, FileMinus2, FilePlus2, KeyRound, Package, PackageMinus, PackagePlus, ShieldClose, X } from 'lucide-react';
 import React, { useState } from 'react';
 import { Check, ChevronsUpDown } from "lucide-react";
 
@@ -74,11 +74,11 @@ const Actions = (props: Props) => {
         setXAccess(false);
         setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null });
         toggleSpinner(false);
-        notify({ title: "Creation Success", message: res.statusText, icon: PackagePlus, iconColor: "text-green-600", barColor: "bg-green-600" });
+        notify({ title: "Creation Success", message: res.statusText, icon: Package, iconColor: "text-green-600", barColor: "bg-green-600" });
       } else if (res?.status === 400) {
         setXAccess(false);
         toggleSpinner(false);
-        notify({ title: "Creation Failure", message: res.statusText, icon: PackagePlus, iconColor: "text-yellow-600", barColor: "bg-yellow-600" });
+        notify({ title: "Creation Failure", message: res.statusText, icon: Package, iconColor: "text-yellow-600", barColor: "bg-yellow-600" });
       } else if (res?.status === 401) {
         setXAccess(false);
         setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null });
@@ -88,7 +88,7 @@ const Actions = (props: Props) => {
       } else if (res?.status === 500) {
         setXAccess(false);
         toggleSpinner(false);
-        notify({ title: "Creation Failure", message: res.statusText, icon: PackagePlus, iconColor: "text-orange-600", barColor: "bg-orange-600" });
+        notify({ title: "Creation Failure", message: res.statusText, icon: Package, iconColor: "text-orange-600", barColor: "bg-orange-600" });
       }
 
     }
@@ -122,11 +122,11 @@ const Actions = (props: Props) => {
         setXAccess(false);
         setSupItemData({ supItemID: null, supItemQty: null, supReason: null, supTargetStationID: null });
         toggleSpinner(false);
-        notify({ title: "Supply Success", message: res.statusText, icon: FileMinus2, iconColor: "text-green-600", barColor: "bg-green-600" });
+        notify({ title: "Supply Success", message: res.statusText, icon: PackageMinus, iconColor: "text-green-600", barColor: "bg-green-600" });
       } else if (res?.status === 400) {
         setXAccess(false);
         toggleSpinner(false);
-        notify({ title: "Supply Failure", message: res.statusText, icon: FileMinus2, iconColor: "text-yellow-600", barColor: "bg-yellow-600" });
+        notify({ title: "Supply Failure", message: res.statusText, icon: PackageMinus, iconColor: "text-yellow-600", barColor: "bg-yellow-600" });
       } else if (res?.status === 401) {
         setXAccess(false);
         setSupItemData({ supItemID: null, supItemQty: null, supReason: null, supTargetStationID: null });
@@ -136,7 +136,7 @@ const Actions = (props: Props) => {
       } else if (res?.status === 500) {
         setXAccess(false);
         toggleSpinner(false);
-        notify({ title: "Supply Failure", message: res.statusText, icon: FileMinus2, iconColor: "text-orange-600", barColor: "bg-orange-600" });
+        notify({ title: "Supply Failure", message: res.statusText, icon: PackageMinus, iconColor: "text-orange-600", barColor: "bg-orange-600" });
       }
 
     }
@@ -170,11 +170,11 @@ const Actions = (props: Props) => {
         setXAccess(false);
         setRepItemData({ repItemID: null, repItemQty: null, repReason: null, repSourceStationID: null });
         toggleSpinner(false);
-        notify({ title: "Replenishment Success", message: res.statusText, icon: FileMinus2, iconColor: "text-green-600", barColor: "bg-green-600" });
+        notify({ title: "Replenishment Success", message: res.statusText, icon: PackagePlus, iconColor: "text-green-600", barColor: "bg-green-600" });
       } else if (res?.status === 400) {
         setXAccess(false);
         toggleSpinner(false);
-        notify({ title: "Replenishment Failure", message: res.statusText, icon: FileMinus2, iconColor: "text-yellow-600", barColor: "bg-yellow-600" });
+        notify({ title: "Replenishment Failure", message: res.statusText, icon: PackagePlus, iconColor: "text-yellow-600", barColor: "bg-yellow-600" });
       } else if (res?.status === 401) {
         setXAccess(false);
         setRepItemData({ repItemID: null, repItemQty: null, repReason: null, repSourceStationID: null });
@@ -184,7 +184,7 @@ const Actions = (props: Props) => {
       } else if (res?.status === 500) {
         setXAccess(false);
         toggleSpinner(false);
-        notify({ title: "Replenishment Failure", message: res.statusText, icon: FileMinus2, iconColor: "text-orange-600", barColor: "bg-orange-600" });
+        notify({ title: "Replenishment Failure", message: res.statusText, icon: PackagePlus, iconColor: "text-orange-600", barColor: "bg-orange-600" });
       }
 
     }
@@ -195,27 +195,27 @@ const Actions = (props: Props) => {
     <div className='relative flex w-full h-full items-center justify-center'>
       <div className={`relative ${itemAddState || itemRepState || itemSupState ? 'hidden opacity-0' : 'flex opacity-100'} w-full h-full items-center justify-center gap-6 transition-all`}>
         <button onClick={() => { setItemRepState(true); setItemAddState(false); setItemSupState(false) }} className='relative flex w-fit h-fit text-zinc-600 gap-2 rounded border border-zinc-700 py-1 px-2 items-center justify-center shadow-md shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
-          <FilePlus2 className='relative flex transition-all text-green-800' width={17} height={17} />
+          <PackagePlus className='relative flex transition-all text-green-800' width={17} height={17} />
           <p className='relative flex text-xs font-medium transition-all'>Replenish Items</p>
         </button>
         <button onClick={() => { setItemRepState(false); setItemAddState(false); setItemSupState(true) }} className='relative flex w-fit h-fit text-zinc-600 gap-2 rounded border border-zinc-700 py-1 px-2 items-center justify-center shadow-md shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
-          <FileMinus2 className='relative flex transition-all text-orange-800' width={17} height={17} />
+          <PackageMinus className='relative flex transition-all text-orange-800' width={17} height={17} />
           <p className='relative flex text-xs font-medium transition-all'>Supply Items</p>
         </button>
         <button onClick={() => { setItemRepState(false); setItemAddState(true); setItemSupState(false) }} className='relative flex w-fit h-fit text-zinc-600 gap-2 rounded border border-zinc-700 py-1 px-2 items-center justify-center shadow-md shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
-          <PackagePlus className='relative flex transition-all text-blue-800' width={17} height={17} />
+          <Package className='relative flex transition-all text-blue-800' width={17} height={17} />
           <p className='relative flex text-xs font-medium transition-all'>Add New Item</p>
         </button>
       </div>
       {/* Replenishing Items */}
       <div className={`relative ${itemRepState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
-          <FilePlus2 className="text-green-800" width={17} height={17} />
+          <PackagePlus className="text-green-800" width={17} height={17} />
           <span className="relative flex text-zinc-600 font-medium text-sm">Item Replenishment</span>
           <button disabled={xAccess} onClick={() => { setItemRepState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
-          <FilePlus2 className="text-green-900 -rotate-12" width={40} height={40} />
+          <PackagePlus className="text-green-900 -rotate-12" width={40} height={40} />
           <p className="text-sm">Fill the fields below about the replenishment.</p>
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
@@ -343,12 +343,12 @@ const Actions = (props: Props) => {
       {/* Supplying Items */}
       <div className={`relative ${itemSupState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
-          <FileMinus2 className="text-orange-800" width={17} height={17} />
+          <PackageMinus className="text-orange-800" width={17} height={17} />
           <span className="relative flex text-zinc-600 font-medium text-sm">Item Supply</span>
           <button disabled={xAccess} onClick={() => { setItemSupState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
-          <FileMinus2 className="text-orange-900 -rotate-12" width={40} height={40} />
+          <PackageMinus className="text-orange-900 -rotate-12" width={40} height={40} />
           <p className="text-sm">Fill the fields below about the supply.</p>
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
@@ -476,12 +476,12 @@ const Actions = (props: Props) => {
       {/* Adding New Items */}
       <div className={`relative ${itemAddState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
-          <PackagePlus className="text-blue-800" width={17} height={17} />
+          <Package className="text-blue-800" width={17} height={17} />
           <span className="relative flex text-zinc-600 font-medium text-sm">Adding New Items</span>
           <button disabled={xAccess} onClick={() => { setItemAddState(false); setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null }) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
-          <PackagePlus className="text-blue-900 -rotate-12" width={40} height={40} />
+          <Package className="text-blue-900 -rotate-12" width={40} height={40} />
           <p className="relative flex w-full text-sm">You can provide details of the new item to fields below.</p>
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
