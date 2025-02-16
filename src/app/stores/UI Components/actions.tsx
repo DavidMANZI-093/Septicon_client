@@ -215,7 +215,7 @@ const Actions = (props: Props) => {
           <button disabled={xAccess} onClick={() => { setItemRepState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
-          <PackagePlus className="text-green-900 -rotate-12" width={40} height={40} />
+          <PackagePlus className="text-green-800 -rotate-12" width={40} height={40} />
           <p className="text-sm">Fill the fields below about the replenishment.</p>
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
