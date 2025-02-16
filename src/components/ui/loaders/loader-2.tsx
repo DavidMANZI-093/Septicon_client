@@ -13,7 +13,7 @@ export default function Loader2() {
 
     getLoader();
 
-  }, [])
+  });
 
-  return <l-jelly-triangle color="#4338ca"></l-jelly-triangle>
+  return <l-jelly-triangle className color="#4338ca"></l-jelly-triangle>
 }
