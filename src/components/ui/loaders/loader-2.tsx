@@ -15,7 +15,5 @@ export default function Loader2() {
 
   });
 
-  return <l-jelly-triangle className="scale-50 bg-indi" clor="#1d4ed8" style={{
-    stroke: '#1d4ed8',
-  }}></l-jelly-triangle>
+  return <l-jelly-triangle className="scale-50 bg-indi" color="#1d4ed8"></l-jelly-triangle>
 }
