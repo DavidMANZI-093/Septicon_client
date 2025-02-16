@@ -15,5 +15,5 @@ export default function Loader2() {
 
   });
 
-  return <l-jelly-triangle className="scale-50 stroke-blue-400" colr="#4338ca"></l-jelly-triangle>
+  return <l-jelly-triangle className="scale-50 stroke-blue-400" ></l-jelly-triangle>
 }
