@@ -211,7 +211,7 @@ const Actions = (props: Props) => {
       <div className={`relative ${itemRepState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <PackagePlus className="text-green-800" width={17} height={17} />
-          <span className="relative flex text-zinc-600 font-medium text-sm">Item Replenishment</span>
+          <span className="relative flex text-zinc-600 font-medium text-sm">Item replenishment</span>
           <button disabled={xAccess} onClick={() => { setItemRepState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
@@ -220,7 +220,7 @@ const Actions = (props: Props) => {
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Select The Item: </label>
+            <label className="font-medium text-zinc-500" htmlFor="item_name">Select item: </label>
             <Popover open={openRep1} onOpenChange={setOpenRep1}>
               <PopoverTrigger asChild>
                 <Button
@@ -238,7 +238,7 @@ const Actions = (props: Props) => {
               </PopoverTrigger>
               <PopoverContent className="w-[180px] h-48 overflow-hidden bg-zinc-900 border border-zinc-800 p-1 shadow-md shadow-zinc-950">
                 <Command>
-                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search Item..."} />
+                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search item..."} />
                   <CommandList>
                     <CommandEmpty className="flex items-center justify-center pb-2 pt-3 gap-2 text-zinc-600 text-sm font-medium"><Container className='text-indigo-400 opacity-30' width={18} height={18} /> No items found.</CommandEmpty>
                     <CommandGroup>
@@ -274,7 +274,7 @@ const Actions = (props: Props) => {
             }} onChange={(e) => setRepItemData({ repItemID: repItemID, repReason: repReason, repItemQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), repSourceStationID: repSourceStationID })} id="reorder_point" value={(repItemQty ? repItemQty : "")} className='bg-transparent font-medium focus:!outline-zinc-700 !py-1 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Source Station: </label>
+            <label className="font-medium text-zinc-500" htmlFor="item_name">Source station: </label>
             <Popover open={openRep2} onOpenChange={setOpenRep2}>
               <PopoverTrigger asChild>
                 <Button
@@ -293,7 +293,7 @@ const Actions = (props: Props) => {
               </PopoverTrigger>
               <PopoverContent className="w-[180px] h-32 bg-zinc-900 border border-zinc-800 p-1 shadow-md shadow-zinc-950">
                 <Command>
-                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search Staion..."} />
+                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search station..."} />
                   <CommandList>
                     <CommandEmpty className="flex items-center justify-center pb-2 pt-3 gap-2 text-zinc-600 text-sm font-medium"><Container className='text-indigo-400 opacity-30' width={18} height={18} /> No items found.</CommandEmpty>
                     <CommandGroup>
@@ -343,17 +343,17 @@ const Actions = (props: Props) => {
       {/* Supplying Items */}
       <div className={`relative ${itemSupState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
-          <PackageMinus className="text-orange-800" width={17} height={17} />
-          <span className="relative flex text-zinc-600 font-medium text-sm">Item Supply</span>
+          <PackageMinus className="text-yellow-800" width={17} height={17} />
+          <span className="relative flex text-zinc-600 font-medium text-sm">Item supply</span>
           <button disabled={xAccess} onClick={() => { setItemSupState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
-          <PackageMinus className="text-orange-900 -rotate-12" width={40} height={40} />
+          <PackageMinus className="text-yellow-800 -rotate-12" width={40} height={40} />
           <p className="text-sm">Fill the fields below about the supply.</p>
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Select The Item: </label>
+            <label className="font-medium text-zinc-500" htmlFor="item_name">Select item: </label>
             <Popover open={openSup1} onOpenChange={setOpenSup1}>
               <PopoverTrigger asChild>
                 <Button
@@ -371,7 +371,7 @@ const Actions = (props: Props) => {
               </PopoverTrigger>
               <PopoverContent className="w-[180px] h-48 overflow-hidden bg-zinc-900 border border-zinc-800 p-1 shadow-md shadow-zinc-950">
                 <Command>
-                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search Item..."} />
+                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search item..."} />
                   <CommandList>
                     <CommandEmpty className="flex items-center justify-center pb-2 pt-3 gap-2 text-zinc-600 text-sm font-medium"><Container className='text-indigo-400 opacity-30' width={18} height={18} /> No items found.</CommandEmpty>
                     <CommandGroup>
@@ -407,7 +407,7 @@ const Actions = (props: Props) => {
             }} onChange={(e) => setSupItemData({ supItemID: supItemID, supReason: supReason, supItemQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), supTargetStationID: supTargetStationID })} id="reorder_point" value={(supItemQty ? supItemQty : "")} className='bg-transparent font-medium focus:!outline-zinc-700 !py-1 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Target Station: </label>
+            <label className="font-medium text-zinc-500" htmlFor="item_name">Target station: </label>
             <Popover open={openSup2} onOpenChange={setOpenSup2}>
               <PopoverTrigger asChild>
                 <Button
@@ -426,7 +426,7 @@ const Actions = (props: Props) => {
               </PopoverTrigger>
               <PopoverContent className="w-[180px] h-32 bg-zinc-900 border border-zinc-800 p-1 shadow-md shadow-zinc-950">
                 <Command>
-                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search Staion..."} />
+                  <CommandInput className='placeholder:text-zinc-600' placeholder={"Search station..."} />
                   <CommandList>
                     <CommandEmpty className="flex items-center justify-center pb-2 pt-3 gap-2 text-zinc-600 text-sm font-medium"><Container className='text-indigo-400 opacity-30' width={18} height={18} /> No items found.</CommandEmpty>
                     <CommandGroup>
@@ -477,34 +477,34 @@ const Actions = (props: Props) => {
       <div className={`relative ${itemAddState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <Package className="text-blue-800" width={17} height={17} />
-          <span className="relative flex text-zinc-600 font-medium text-sm">Adding New Items</span>
+          <span className="relative flex text-zinc-600 font-medium text-sm">Adding a new items</span>
           <button disabled={xAccess} onClick={() => { setItemAddState(false); setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null }) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
-          <Package className="text-blue-900 -rotate-12" width={40} height={40} />
+          <Package className="text-blue-800 -rotate-12" width={40} height={40} />
           <p className="relative flex w-full text-sm">You can provide details of the new item to fields below.</p>
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Item Name: </label>
+            <label className="font-medium text-zinc-500" htmlFor="item_name">Item name: </label>
             <input style={{
               borderColor: '#27272a'
             }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: e.target.value, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="item_name" value={(newItemName ? newItemName : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' type="text" aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='New name' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="reorder_point">Reorder Point: </label>
+            <label className="font-medium text-zinc-500" htmlFor="reorder_point">Reorder point: </label>
             <input style={{
               borderColor: '#27272a'
             }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="reorder_point" value={(newRorderPoint ? newRorderPoint : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="init_qty">Initial Quantity: </label>
+            <label className="font-medium text-zinc-500" htmlFor="init_qty">Initial quantity: </label>
             <input style={{
               borderColor: '#27272a'
             }} onChange={(e) => setNewItemData({ newInitQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="init_qty" value={(newInitQty ? newInitQty : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0 &mdash; (Optional)' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="unit_of_measure">Unit of Measurement: </label>
+            <label className="font-medium text-zinc-500" htmlFor="unit_of_measure">Unit of measurement: </label>
             <Select value={newUnitOfMeasure ? newUnitOfMeasure : ""} onValueChange={(value) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: value, newItemDescription: newItemDescription })}>
               <SelectTrigger className="relative !px-2 !py-1 !h-fit focus:ring-zinc-800 flex w-36 border-zinc-800 focus:border-zinc-800">
                 <SelectValue placeholder="Unit of measure" />
