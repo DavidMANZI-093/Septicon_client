@@ -9,7 +9,7 @@ const BlankFeature = (/* props: Props */) => {
     return (
         <div className='relative flex items-center justify-center w-full h-full gap-2'>
             <Loader2 />
-            <p className='relative flex text-zinc-600 font-medium text-base'>Feature under development...</p>
+            <p className='relative flex text-zinc-600 font-medium text-sm'>Feature under development...</p>
         </div>
     )
 }
