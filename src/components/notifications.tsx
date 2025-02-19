@@ -11,7 +11,7 @@ const NoteBox = (/* props: Props */) => {
     const { notifications, removeNotification } = useNotification();
 
     return (
-        <div className="absolute flex flex-col gap-2 top-4 right-4">
+        <div className="absolute flex flex-col z-50 gap-2 top-4 right-4">
             {notifications.map((notif) => (
                 <div key={notif.id} className="relative flex flex-col bg-zinc-900 rounded border border-zinc-800 shadow-lg shadow-zinc-950 overflow-hidden">
                     <div className='flex relative py-2 px-2 gap-2 w-72 h-fit justify-between'>

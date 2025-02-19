@@ -194,17 +194,17 @@ const Actions = (props: Props) => {
   return (
     <div className='relative flex w-full h-full items-center justify-center'>
       <div className={`relative ${itemAddState || itemRepState || itemSupState ? 'hidden opacity-0' : 'flex opacity-100'} w-full h-full items-center justify-center gap-12 transition-all`}>
-        <button onClick={() => { setItemRepState(true); setItemAddState(false); setItemSupState(false) }} className='relative flex w-fit h-fit text-zinc-500 gap-2 rounded border border-zinc-800 py-1 px-2 items-center justify-center shadow shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
+        <button onClick={() => { setItemRepState(true); setItemAddState(false); setItemSupState(false) }} className='relative flex w-fit h-fit text-zinc-600 gap-2 rounded border border-zinc-800 py-1 px-2 items-center justify-center shadow shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
           <PackagePlus className='relative flex transition-all text-green-800' size={20} />
           <p className='relative flex text-sm font-medium transition-all'>Replenish items</p>
         </button>
-        <button onClick={() => { setItemRepState(false); setItemAddState(false); setItemSupState(true) }} className='relative flex w-fit h-fit text-zinc-500 gap-2 rounded border border-zinc-800 py-1 px-2 items-center justify-center shadow shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
+        <button onClick={() => { setItemRepState(false); setItemAddState(false); setItemSupState(true) }} className='relative flex w-fit h-fit text-zinc-600 gap-2 rounded border border-zinc-800 py-1 px-2 items-center justify-center shadow shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
           <PackageMinus className='relative flex transition-all text-yellow-800' size={20} />
           <p className='relative flex text-sm font-medium transition-all'>Supply items</p>
         </button>
-        <button onClick={() => { setItemRepState(false); setItemAddState(true); setItemSupState(false) }} className='relative flex w-fit h-fit text-zinc-500 gap-2 rounded border border-zinc-800 py-1 px-2 items-center justify-center shadow shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
+        <button onClick={() => { setItemRepState(false); setItemAddState(true); setItemSupState(false) }} className='relative flex w-fit h-fit text-zinc-600 gap-2 rounded border border-zinc-800 py-1 px-2 items-center justify-center shadow shadow-zinc-950 hover:shadow-lg hover:shadow-zinc-950 active:scale-95 transition-all'>
           <Package className='relative flex transition-all text-blue-800' size={20} />
-          <p className='relative flex text-sm font-medium transition-all'>New item</p>
+          <p className='relative flex text-sm font-medium transition-all'>Add new item</p>
         </button>
       </div>
       {/* Replenishing Items */}
@@ -220,7 +220,7 @@ const Actions = (props: Props) => {
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Select item: </label>
+            <label className="font-medium text-zinc-500">Select item: </label>
             <Popover open={openRep1} onOpenChange={setOpenRep1}>
               <PopoverTrigger asChild>
                 <Button
@@ -268,13 +268,13 @@ const Actions = (props: Props) => {
             </Popover>
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="reorder_point">Quantity: </label>
+            <label className="font-medium text-zinc-500" htmlFor="repQTY">Quantity: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setRepItemData({ repItemID: repItemID, repReason: repReason, repItemQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), repSourceStationID: repSourceStationID })} id="reorder_point" value={(repItemQty ? repItemQty : "")} className='bg-transparent font-medium focus:!outline-zinc-700 !py-1 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
+            }} onChange={(e) => setRepItemData({ repItemID: repItemID, repReason: repReason, repItemQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), repSourceStationID: repSourceStationID })} id="repQTY" value={(repItemQty ? repItemQty : "")} className='bg-transparent font-medium placeholder:text-zinc-600 focus:!outline-zinc-700 !py-1 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Source station: </label>
+            <label className="font-medium text-zinc-500">Source station: </label>
             <Popover open={openRep2} onOpenChange={setOpenRep2}>
               <PopoverTrigger asChild>
                 <Button
@@ -323,18 +323,18 @@ const Actions = (props: Props) => {
             </Popover>
           </fieldset>
           <fieldset className='relative flex gap-2 justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="description">Reason: </label>
+            <label className="font-medium text-zinc-500" htmlFor="repReason">Reason: </label>
             <Textarea value={(repReason ? repReason : "")} maxLength={500} style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setRepItemData({ repItemID: repItemID, repItemQty: repItemQty, repReason: e.target.value, repSourceStationID: repSourceStationID })} id="description" className='bg-transparent font-medium !-mt-1 !py-1 max-h-24 focus:ring-zinc-800 placeholder:font-normal input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Details about the replenishment...' />
+            }} onChange={(e) => setRepItemData({ repItemID: repItemID, repItemQty: repItemQty, repReason: e.target.value, repSourceStationID: repSourceStationID })} id="repReason" className='bg-transparent font-medium !-mt-1 !py-1 max-h-24 focus:ring-zinc-800 placeholder:text-zinc-600 input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Details about the replenishment...' />
           </fieldset>
         </div>
         <div className="relative flex p-4 gap-2 justify-between">
           <fieldset className='relative flex ml-4 gap-2 items-center'>
-            <label htmlFor="password"><KeyRound className='text-zinc-500' height={18} width={19} /></label>
+            <label htmlFor="repPassword"><KeyRound className='text-zinc-500' height={18} width={19} /></label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => { setPassword(e.target.value) }} id="password" className='bg-transparent input-field' type={isVisible ? 'text' : 'password'} placeholder='Password' />
+            }} onChange={(e) => { setPassword(e.target.value) }} id="repPassword" className='bg-transparent input-field' type={isVisible ? 'text' : 'password'} placeholder='Password' />
             <span onClick={() => { toggleVisibility() }} className='cursor-pointer absolute right-2'>{isVisible ? <Eye className='text-zinc-500' width={16} height={16} /> : <EyeOff className='text-zinc-500' width={16} height={16} />}</span>
           </fieldset>
           <Button2 disabeled={(password && repItemID && repItemQty && repReason || repSourceStationID) ? false : true} spinner={isSpinning} value={"Confirm"} onClick={() => { sendReplenish() }} />
@@ -353,7 +353,7 @@ const Actions = (props: Props) => {
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Select item: </label>
+            <label className="font-medium text-zinc-500">Select item: </label>
             <Popover open={openSup1} onOpenChange={setOpenSup1}>
               <PopoverTrigger asChild>
                 <Button
@@ -401,13 +401,13 @@ const Actions = (props: Props) => {
             </Popover>
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="reorder_point">Quantity: </label>
+            <label className="font-medium text-zinc-500" htmlFor="supQTY">Quantity: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setSupItemData({ supItemID: supItemID, supReason: supReason, supItemQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), supTargetStationID: supTargetStationID })} id="reorder_point" value={(supItemQty ? supItemQty : "")} className='bg-transparent font-medium focus:!outline-zinc-700 !py-1 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
+            }} onChange={(e) => setSupItemData({ supItemID: supItemID, supReason: supReason, supItemQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), supTargetStationID: supTargetStationID })} id="supQTY" value={(supItemQty ? supItemQty : "")} className='bg-transparent font-medium focus:!outline-zinc-700 !py-1 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Target station: </label>
+            <label className="font-medium text-zinc-500">Target station: </label>
             <Popover open={openSup2} onOpenChange={setOpenSup2}>
               <PopoverTrigger asChild>
                 <Button
@@ -456,18 +456,18 @@ const Actions = (props: Props) => {
             </Popover>
           </fieldset>
           <fieldset className='relative flex gap-2 justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="description">Reason: </label>
+            <label className="font-medium text-zinc-500" htmlFor="supReason">Reason: </label>
             <Textarea value={(supReason ? supReason : "")} maxLength={500} style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setSupItemData({ supItemID: supItemID, supItemQty: supItemQty, supReason: e.target.value, supTargetStationID: supTargetStationID })} id="description" className='bg-transparent font-medium !-mt-1 !py-1 max-h-24 focus:ring-zinc-800 placeholder:font-normal input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Details about the supply...' />
+            }} onChange={(e) => setSupItemData({ supItemID: supItemID, supItemQty: supItemQty, supReason: e.target.value, supTargetStationID: supTargetStationID })} id="supReason" className='bg-transparent font-medium !-mt-1 !py-1 max-h-24 focus:ring-zinc-800 placeholder:font-normal input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Details about the supply...' />
           </fieldset>
         </div>
         <div className="relative flex p-4 gap-2 justify-between">
           <fieldset className='relative flex ml-4 gap-2 items-center'>
-            <label htmlFor="password"><KeyRound className='text-zinc-500' height={18} width={19} /></label>
+            <label htmlFor="supPassword"><KeyRound className='text-zinc-500' height={18} width={19} /></label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => { setPassword(e.target.value) }} id="password" className='bg-transparent input-field' type={isVisible ? 'text' : 'password'} placeholder='Password' />
+            }} onChange={(e) => { setPassword(e.target.value) }} id="supPassword" className='bg-transparent input-field' type={isVisible ? 'text' : 'password'} placeholder='Password' />
             <span onClick={() => { toggleVisibility() }} className='cursor-pointer absolute right-2'>{isVisible ? <Eye className='text-zinc-500' width={16} height={16} /> : <EyeOff className='text-zinc-500' width={16} height={16} />}</span>
           </fieldset>
           <Button2 disabeled={(password && supItemID && supItemQty && supReason || supTargetStationID) ? false : true} spinner={isSpinning} value={"Confirm"} onClick={() => { sendSupply() }} />
@@ -477,7 +477,7 @@ const Actions = (props: Props) => {
       <div className={`relative ${itemAddState ? 'flex opacity-100' : 'hidden opacity-0'} gap-6 flex-col w-fit h-fit rounded border border-zinc-700 shadow-lg shadow-zinc-950`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <Package className="text-blue-800" width={17} height={17} />
-          <span className="relative flex text-zinc-600 font-medium text-sm">Adding a new items</span>
+          <span className="relative flex text-zinc-600 font-medium text-sm">Adding a new item</span>
           <button disabled={xAccess} onClick={() => { setItemAddState(false); setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null }) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
@@ -486,27 +486,27 @@ const Actions = (props: Props) => {
         </div>
         <div className="relative flex flex-col w-fit h-full ml-16 border border-zinc-800 p-2 rounded gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="item_name">Item name: </label>
+            <label className="font-medium text-zinc-500" htmlFor="newName">Item name: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: e.target.value, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="item_name" value={(newItemName ? newItemName : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' type="text" aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='New name' />
+            }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: e.target.value, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="newName" value={(newItemName ? newItemName : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' type="text" aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='New name' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="reorder_point">Reorder point: </label>
+            <label className="font-medium text-zinc-500" htmlFor="newReorder">Reorder point: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="reorder_point" value={(newRorderPoint ? newRorderPoint : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
+            }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="newReorder" value={(newRorderPoint ? newRorderPoint : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="init_qty">Initial quantity: </label>
+            <label className="font-medium text-zinc-500" htmlFor="newQTY">Initial quantity: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ newInitQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="init_qty" value={(newInitQty ? newInitQty : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0 &mdash; (Optional)' />
+            }} onChange={(e) => setNewItemData({ newInitQty: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="newQTY" value={(newInitQty ? newInitQty : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='(Optional) &mdash; 0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="unit_of_measure">Unit of measurement: </label>
+            <label className="font-medium text-zinc-500">Unit of measurement: </label>
             <Select value={newUnitOfMeasure ? newUnitOfMeasure : ""} onValueChange={(value) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: value, newItemDescription: newItemDescription })}>
-              <SelectTrigger className="relative !px-2 !py-1 !h-fit focus:ring-zinc-800 flex w-36 border-zinc-800 focus:border-zinc-800">
+              <SelectTrigger className="relative !px-2 !py-1 !h-fit font-medium placeholder:text-zinc-600 focus:ring-zinc-800 flex w-36 border-zinc-800 focus:border-zinc-800">
                 <SelectValue placeholder="Unit of measure" />
               </SelectTrigger>
               <SelectContent className="relative flex flex-col h-36 overflow-y-auto bg-zinc-900 shadow-lg shadow-zinc-950 border-zinc-800">
@@ -520,18 +520,18 @@ const Actions = (props: Props) => {
             </Select>
           </fieldset>
           <fieldset className='relative flex gap-2 justify-between'>
-            <label className="font-medium text-zinc-500" htmlFor="description">Description: </label>
+            <label className="font-medium text-zinc-500" htmlFor="newDescription">Description: </label>
             <Textarea value={(newItemDescription ? newItemDescription : "")} maxLength={60} style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: e.target.value })} id="description" className='bg-transparent font-medium placeholder:font-normal !-mt-1 !py-1 max-h-24 focus:ring-zinc-800 input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Details about the new item...' />
+            }} onChange={(e) => setNewItemData({ newInitQty: newInitQty, newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: e.target.value })} id="newDescription" className='bg-transparent font-medium placeholder:text-zinc-600 !-mt-1 !py-1 max-h-24 focus:ring-zinc-800 input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Details about the new item...' />
           </fieldset>
         </div>
         <div className="relative flex p-4 gap-2 justify-between">
           <fieldset className='relative flex ml-4 gap-2 items-center'>
-            <label htmlFor="password"><KeyRound className='text-zinc-500' height={18} width={19} /></label>
+            <label htmlFor="newPassword"><KeyRound className='text-zinc-500' height={18} width={19} /></label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => { setPassword(e.target.value) }} id="password" className='bg-transparent input-field' type={isVisible ? 'text' : 'password'} placeholder='Password' />
+            }} onChange={(e) => { setPassword(e.target.value) }} id="newPassword" className='bg-transparent input-field' type={isVisible ? 'text' : 'password'} placeholder='Password' />
             <span onClick={() => { toggleVisibility() }} className='cursor-pointer absolute right-2'>{isVisible ? <Eye className='text-zinc-500' width={16} height={16} /> : <EyeOff className='text-zinc-500' width={16} height={16} />}</span>
           </fieldset>
           <Button2 disabeled={(password && newItemDescription && newItemName && newRorderPoint && newUnitOfMeasure || newInitQty) ? false : true} spinner={isSpinning} value={"Add Item"} onClick={() => { sendNewItem(); }} />

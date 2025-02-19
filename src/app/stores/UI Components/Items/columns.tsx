@@ -15,11 +15,11 @@ export const columns: ColumnDef<Items>[] = [
   },
   {
     accessorKey: "reorderPoint",
-    header: "Reorder Point",
+    header: "Reorder point",
   },
   {
     accessorKey: "unitOfMeasure",
-    header: "Unit of Measure",
+    header: "Unit of measure",
   },
   {
     accessorKey: "description",

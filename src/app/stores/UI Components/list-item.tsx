@@ -16,7 +16,7 @@ const ListItem = (props: Props) => {
     const { router } = useCurrentRoute();
 
     return (
-        <li className={`relative ${router == props.platform.href ? 'bg-zinc-800' : 'bg-transparent '} flex flex-col justify-center transition-all w-full h-fit rounded cursor-pointer hover:bg-zinc-800 actie:scale-95`}>
+        <li className={`relative ${router == props.platform.href ? 'bg-zinc-800' : 'bg-transparent '} flex flex-col justify-center transition-all w-full h-fit rounded cursor-pointer hover:bg-zinc-800 active:scale-95`}>
             <span className={`absolute -left-0.5 top-2.5 h-3 w-1 transition-all ${router == props.platform.href ? 'flex' : 'hidden'} rounded-lg btn-gradient2`}></span>
             <div className='relative flex w-full h-full transition-all text-zinc-500 overflow-hidden items-center justify-between'>
                 <Link href={props.platform.href} className='relative h-full w-full flex p-2 transition-all items-center gap-2'>
