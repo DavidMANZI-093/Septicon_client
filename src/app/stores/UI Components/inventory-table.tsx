@@ -51,7 +51,7 @@ const InventoryTable = (props: Props) => {
                         props.inventoryRecords.map((record) => {
                             return <React.Fragment key={randomBytes(6).toString('hex')}>
                                 <TableRow className="relative flex w-full h-8 items-center !border-t-0 !border-b justify-evenly hover:bg-zinc-800 border-zinc-800 group" key={randomBytes(6).toString('hex')}>
-                                    <TableCell className="relative flex w-full items-center font-medium text-xs">{record.name}</TableCell>
+                                    <TableCell className="relative block text-ellipsis overflow-hidden text-nowrap w-full items-center font-medium text-xs">{record.name}</TableCell>
                                     <TableCell className="relative flex w-full items-center pl-4 font-medium text-xs">{record.unitOfMeasure}</TableCell>
                                     <TableCell className="relative flex w-full items-center pl-4 font-medium text-xs"><span className={`relative flex rounded-full h-1 w-1 mr-1 ${(record.quantity >= record.reorderPoint * 2 ? 'bg-green-700' : record.quantity > record.reorderPoint ? 'bg-yellow-700' : 'bg-red-800' )}`} />{record.quantity}</TableCell>
                                     <TableCell className="relative flex w-full items-center pl-4 font-medium text-xs">{record.reorderPoint}</TableCell>
