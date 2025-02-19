@@ -131,7 +131,7 @@ export function DataTable<TData, TValue>({
     <React.Fragment>
       <div className={`${delState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-4 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded bg-zinc-900 border border-zinc-800 z-20`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
-          <Trash2 className="text-red-900" width={17} height={17} />
+          <Info className="text-blue-600" width={17} height={17} />
           <span className="relative flex text-zinc-500 font-medium text-sm">Confirm Deletion</span>
           <button disabled={xAccess} onClick={() => { setDelState(false); setItemData({ itemIdD: null, itemName: null }) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
         </h2>
