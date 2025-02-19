@@ -129,6 +129,7 @@ export function DataTable<TData, TValue>({
 
   return (
     <React.Fragment>
+      {/* Item Deletion */}
       <div className={`${delState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-4 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded bg-zinc-900 border border-zinc-800 z-20`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <Info className="text-blue-600" width={17} height={17} />
@@ -152,14 +153,15 @@ export function DataTable<TData, TValue>({
           <Button2 disabeled={(password) ? false : true} spinner={isSpinning} value={"Confirm"} onClick={() => sendDelete()} />
         </div>
       </div>
+      {/* Item Edition */}
       <div className={`${editState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-8 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded bg-zinc-900 border border-zinc-800 z-20`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
-          <Info className="text-blue-600" width={17} height={17} />
+          <Edit className="text-green-900" width={17} height={17} />
           <span className="relative flex text-zinc-500 font-medium text-sm">Editing Item Details</span>
           <button disabled={xAccess} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer" onClick={() => { setEditState(false); setNewItemData({ itemIdN: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null }) }}><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex items-center w-full h-fit gap-4 px-6">
-          <Edit className="text-green-900 -rotate-12" width={40} height={40} />
+          <Edit className="text-green-800 -rotate-12" width={40} height={40} />
           <p className="text-sm">You can provide new details to fields below.</p>
         </div>
         <div className="relative flex flex-col w-fit ml-12 border border-zinc-800 p-2 rounded gap-4 text-sm">
