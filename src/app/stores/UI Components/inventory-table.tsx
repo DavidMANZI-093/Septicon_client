@@ -31,9 +31,9 @@ const InventoryTable = (props: Props) => {
                     <p className="text-sm">The item&apos;s location in the store.</p>
                 </div>
                 <div className="relative flex w-fit h-fit justify-center gap-2 pb-8 ml-20 mr-12">
-                    <p className="relative flex text-sm font-medium rounded p-2 bg-zinc-950">{`Store Shelf: ${getLetterMapping(strRow!)} - ${strCol}`}</p>
+                    <p className="relative flex text-sm font-medium rounded p-2 bg-zinc-950">{`Store shelf: ${getLetterMapping(strRow!)} - ${strCol}`}</p>
                     <p className="relative flex text-sm font-medium rounded p-2">&</p>
-                    <p className="relative flex text-sm font-medium rounded p-2 bg-zinc-950">{`Shelf Bin: ${shlRow} - ${shlCol}`}</p>
+                    <p className="relative flex text-sm font-medium rounded p-2 bg-zinc-950">{`Shelf bin: ${shlRow} - ${shlCol}`}</p>
                 </div>
             </div>
             <Table className={`relative ${locState ? 'pointer-events-none blur-[1px]' : ''} flex rounded overflow-hidden max-w-[100%] border border-zinc-700 text-zinc-500 flex-col w-full h-full`}>
