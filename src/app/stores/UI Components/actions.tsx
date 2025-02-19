@@ -212,7 +212,7 @@ const Actions = (props: Props) => {
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <PackagePlus className="text-green-800" width={17} height={17} />
           <span className="relative flex text-zinc-600 font-medium text-sm">Item replenishment</span>
-          <button disabled={xAccess} onClick={() => { setItemRepState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
+          <button disabled={xAccess} onClick={() => { setItemRepState(false) }} className={`absolute flex w-fit h-fit right-0 mr-2 ${xAccess ? 'cursor-not-allowed' : 'cursor-pointer' }`}><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
           <PackagePlus className="text-green-800 -rotate-12" width={40} height={40} />
@@ -345,7 +345,7 @@ const Actions = (props: Props) => {
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <PackageMinus className="text-yellow-800" width={17} height={17} />
           <span className="relative flex text-zinc-600 font-medium text-sm">Item supply</span>
-          <button disabled={xAccess} onClick={() => { setItemSupState(false) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
+          <button disabled={xAccess} onClick={() => { setItemSupState(false) }} className={`absolute flex w-fit h-fit right-0 mr-2 ${xAccess ? 'cursor-not-allowed' : 'cursor-pointer' }`}><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
           <PackageMinus className="text-yellow-800 -rotate-12" width={40} height={40} />
@@ -478,7 +478,7 @@ const Actions = (props: Props) => {
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <Package className="text-blue-800" width={17} height={17} />
           <span className="relative flex text-zinc-600 font-medium text-sm">Adding a new item</span>
-          <button disabled={xAccess} onClick={() => { setItemAddState(false); setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null }) }} className="absolute flex w-fit h-fit right-0 mr-2 cursor-pointer"><X width={17} height={17} /></button>
+          <button disabled={xAccess} onClick={() => { setItemAddState(false); setNewItemData({ newInitQty: null, newItemName: null, newRorderPoint: null, newUnitOfMeasure: null, newItemDescription: null }) }} className={`absolute flex w-fit h-fit right-0 mr-2 ${xAccess ? 'cursor-not-allowed' : 'cursor-pointer' }`}><X width={17} height={17} /></button>
         </h2>
         <div className="relative flex w-full items-center h-fit gap-4 px-6">
           <Package className="text-blue-800 -rotate-12" width={40} height={40} />
