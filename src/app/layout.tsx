@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <NotificationProvider>
-        <body className={`text-zinc-500 overflow-x-hidden bg-zinc-900 flex !p-2 absolute w-full h-screen !${robotoGFont.variable} antialiased`}>
+        <body className={`text-zinc-500 overflow-x-hidden bg-zinc-900 flex p-2! absolute w-full h-screen !${robotoGFont.variable} antialiased`}>
           {children}
           <NoteBox />
         </body>

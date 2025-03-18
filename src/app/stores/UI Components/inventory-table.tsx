@@ -20,7 +20,7 @@ const InventoryTable = (props: Props) => {
 
     return (
         <React.Fragment>
-            <div className={`${locState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-4 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded bg-zinc-900 border border-zinc-800 z-20`}>
+            <div className={`${locState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-4 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded-sm bg-zinc-900 border border-zinc-800 z-20`}>
                 <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
                     <MapPinHouse className="text-green-800" width={17} height={17} />
                     <span className="relative flex text-zinc-500 font-medium text-sm">Item location</span>
@@ -31,12 +31,12 @@ const InventoryTable = (props: Props) => {
                     <p className="text-sm">The item&apos;s location in the store.</p>
                 </div>
                 <div className="relative flex w-fit h-fit justify-center gap-2 pb-8 ml-20 mr-12">
-                    <p className="relative flex text-sm font-medium rounded p-2 bg-zinc-950">{`Store shelf: ${getLetterMapping(strRow!)} - ${strCol}`}</p>
-                    <p className="relative flex text-sm font-medium rounded p-2">&</p>
-                    <p className="relative flex text-sm font-medium rounded p-2 bg-zinc-950">{`Shelf bin: ${shlRow} - ${shlCol}`}</p>
+                    <p className="relative flex text-sm font-medium rounded-sm p-2 bg-zinc-950">{`Store shelf: ${getLetterMapping(strRow!)} - ${strCol}`}</p>
+                    <p className="relative flex text-sm font-medium rounded-sm p-2">&</p>
+                    <p className="relative flex text-sm font-medium rounded-sm p-2 bg-zinc-950">{`Shelf bin: ${shlRow} - ${shlCol}`}</p>
                 </div>
             </div>
-            <Table className={`relative ${locState ? 'pointer-events-none blur-[1px]' : ''} flex rounded overflow-hidden max-w-[100%] border border-zinc-700 text-zinc-500 flex-col w-full h-full`}>
+            <Table className={`relative ${locState ? 'pointer-events-none blur-[1px]' : ''} flex rounded-sm overflow-hidden max-w-[100%] border border-zinc-700 text-zinc-500 flex-col w-full h-full`}>
                 <TableHeader className="relative flex w-full h-fit">
                     <TableRow className="relative flex w-full h-8 items-center justify-evenly bg-zinc-800 border-zinc-700">
                         <TableHead className="relative flex w-full items-center">Name</TableHead>
@@ -50,7 +50,7 @@ const InventoryTable = (props: Props) => {
                     {props.inventoryRecords.length > 0 ?
                         props.inventoryRecords.map((record) => {
                             return <React.Fragment key={randomBytes(6).toString('hex')}>
-                                <TableRow className="relative flex w-full h-8 items-center !border-t-0 !border-b justify-evenly hover:bg-zinc-800 border-zinc-800 group" key={randomBytes(6).toString('hex')}>
+                                <TableRow className="relative flex w-full h-8 items-center border-t-0! border-b! justify-evenly hover:bg-zinc-800 border-zinc-800 group" key={randomBytes(6).toString('hex')}>
                                     <TableCell className="relative block text-ellipsis overflow-hidden text-nowrap w-full items-center font-medium text-xs">{record.name}</TableCell>
                                     <TableCell className="relative flex w-full items-center pl-4 font-medium text-xs">{record.unitOfMeasure}</TableCell>
                                     <TableCell className="relative flex w-full items-center pl-4 font-medium text-xs"><span className={`relative flex rounded-full h-1 w-1 mr-1 ${(record.quantity >= record.reorderPoint * 2 ? 'bg-green-700' : record.quantity > record.reorderPoint ? 'bg-yellow-700' : 'bg-red-800' )}`} />{record.quantity}</TableCell>

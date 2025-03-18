@@ -62,7 +62,7 @@ export default class BarChartEx extends PureComponent {
                             backgroundColor: '#18181b',
                             border: '1px solid #3f3f46',
                             color: '#71717a'
-                        }} wrapperClassName='rounded shadow-md shadow-zinc-950 font-medium' />
+                        }} wrapperClassName='rounded-sm shadow-md shadow-zinc-950 font-medium' />
                         <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
                         <ReferenceLine y={0} stroke="#71717a" />
                         <Brush travellerWidth={4}  dataKey="name" height={6} fill='#18181b' stroke="#4f46e5" />

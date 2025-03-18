@@ -95,7 +95,7 @@ export default class PieChartEx extends PureComponent {
                             backgroundColor: '#18181b',
                             border: '1px solid #3f3f46',
                             color: '#71717a'
-                        }} wrapperClassName='rounded shadow-md shadow-zinc-950 font-medium' /> */}
+                        }} wrapperClassName='rounded-sm shadow-md shadow-zinc-950 font-medium' /> */}
                     </PieChart>
                 </ResponsiveContainer>
             </>

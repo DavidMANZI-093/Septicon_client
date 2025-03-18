@@ -67,7 +67,7 @@ export default class RadarChartEx extends PureComponent {
                             backgroundColor: '#18181b',
                             border: '1px solid #3f3f46',
                             color: '#71717a'
-                        }} wrapperClassName='rounded shadow-md shadow-zinc-950 font-medium' />
+                        }} wrapperClassName='rounded-sm shadow-md shadow-zinc-950 font-medium' />
                         <Legend className='flex items-center' iconType='line' />
                     </RadarChart>
                 </ResponsiveContainer>

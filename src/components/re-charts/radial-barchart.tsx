@@ -75,7 +75,7 @@ export default class RadialBarChartEx extends PureComponent {
                             backgroundColor: '#18181b',
                             border: '1px solid #3f3f46',
                             color: '#71717a',
-                        }} active={false} wrapperClassName=' rounded shadow shadow-zinc-950 font-medium' />
+                        }} active={false} wrapperClassName=' rounded-sm shadow-sm shadow-zinc-950 font-medium' />
                         <Legend iconSize={8} layout='vertical' align='right' verticalAlign='middle' />
                     </RadialBarChart>
                 </ResponsiveContainer>

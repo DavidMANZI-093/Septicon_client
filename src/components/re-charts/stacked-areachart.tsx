@@ -54,7 +54,7 @@ export default class AreaChartEx extends PureComponent {
     render() {
         return (
             <>
-                <h2 className='pl-4 text-sm text-zinc-500 font-medium'>Fuel Usage Curve (Gasoline, Diesel, & Benzen)</h2>
+                <h2 className='!pl-4 text-sm text-zinc-500 font-medium'>Fuel Usage Curve (Gasoline, Diesel, & Benzen)</h2>
                 <ResponsiveContainer className={`text-xs h-[200px]`} width="100%" height="100%">
                     <AreaChart
                         width={500}
@@ -74,7 +74,7 @@ export default class AreaChartEx extends PureComponent {
                             backgroundColor: '#18181b',
                             border: '1px solid #3f3f46',
                             color: '#71717a'
-                        }} wrapperClassName='rounded shadow-md shadow-zinc-950 font-medium' />
+                        }} wrapperClassName='rounded-sm shadow-md shadow-zinc-950 font-medium' />
                         <Legend />
                         <Area type="monotone" dataKey="Gasoline" stackId="1" stroke="#312e81" fill="#312e81" dot={{r: 2}} activeDot={{ r: 4, stroke: '#71717a' }} />
                         <Area type="monotone" dataKey="Diesel" stackId="1" stroke="#4338ca" fill="#4338ca" dot={{r: 2}} activeDot={{ r: 4, stroke: '#71717a' }} />

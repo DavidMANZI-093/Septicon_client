@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const Stores = ({/* props: Props, */}) => {
 
-  redirect('stores/rg-31-nyala');
+  redirect('stores/arma-8x8');
 }
 
 export default Stores;

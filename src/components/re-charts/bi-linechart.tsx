@@ -74,7 +74,7 @@ export default class LineChartEx extends PureComponent {
                             backgroundColor: '#18181b',
                             border: '1px solid #3f3f46',
                             color: '#71717a'
-                        }} wrapperClassName='rounded shadow-md shadow-zinc-950 font-medium' />
+                        }} wrapperClassName='rounded-sm shadow-md shadow-zinc-950 font-medium' />
                         <Legend />
                         <Line type="monotone" dataKey="Ammunition" stroke="#2563eb" fill='#2563eb' dot={{r: 2}} activeDot={{ r: 4, stroke: '#71717a' }} />
                         <Line type="monotone" dataKey="Spare parts" stroke="#4f46e5" fill='#4f46e5' dot={{r: 2}} activeDot={{ r: 4, stroke: '#71717a' }} />

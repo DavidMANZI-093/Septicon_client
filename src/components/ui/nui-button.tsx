@@ -16,7 +16,7 @@ type ButtonProps = {
 
 export const Button = (props: ButtonProps) => {
     return (
-        <button disabled={props.disabeled} className={`h-9 w-28 ${props.disabeled ? 'text-zinc-400 bg-indigo-900' : 'text-zinc-300 bg-indigo-800'} rounded font-medium transition-all shadow-md shadow-zinc-950 ${props.spinner || props.disabeled ? 'cursor-not-allowed' : 'hover:shadow-lg hover:shadow-zinc-950'}`} onClick={props.onClick}>
+        <button disabled={props.disabeled} className={`h-9 w-28 ${props.disabeled ? 'text-zinc-400 bg-indigo-900' : 'text-zinc-300 bg-indigo-800'} cursor-pointer rounded-sm font-medium transition-all shadow-md shadow-zinc-950 ${props.spinner || props.disabeled ? 'cursor-not-allowed' : 'hover:shadow-lg hover:shadow-zinc-950'}`} onClick={props.onClick}>
             {props.spinner ? <span className='flex m-auto w-4 h-4 border-2 border-indigo-600 border-l-indigo-400 rounded-full animate-spin'></span> :
                 props.value
             }
@@ -26,7 +26,7 @@ export const Button = (props: ButtonProps) => {
 
 export const Button2 = (props: ButtonProps) => {
     return (
-        <button disabled={props.disabeled} className={`h-8 w-24 ${props.disabeled ? 'text-zinc-400 bg-indigo-900' : 'text-zinc-400 bg-indigo-800'} rounded text-sm font-medium transition-all shadow-md shadow-zinc-950 ${props.spinner || props.disabeled ? 'cursor-not-allowed' : 'hover:shadow-lg hover:shadow-zinc-950'}`} onClick={props.onClick}>
+        <button disabled={props.disabeled} className={`h-8 w-24 ${props.disabeled ? 'text-zinc-400 bg-indigo-900' : 'text-zinc-400 bg-indigo-800'} rounded-sm text-sm font-medium transition-all shadow-md shadow-zinc-950 ${props.spinner || props.disabeled ? 'cursor-not-allowed' : 'hover:shadow-lg hover:shadow-zinc-950 cursor-pointer'}`} onClick={props.onClick}>
             {props.spinner ? <span className='flex m-auto w-4 h-4 border-2 border-indigo-600 border-l-indigo-400 rounded-full animate-spin'></span> :
                 props.value
             }
@@ -47,10 +47,11 @@ export const SideBtn = (/* props: SideBtnProps */) => {
                     <Image priority={true} width={36} height={36} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.png'} />
                     <h2 className='text-zinc-500 font-medium text-sm'>Septicon</h2>
                 </span>
-                <button onClick={() => toggleSidebar()} className={`relative flex h-6 w-6 mr-2 justify-center items-center transition-all rounded-md text-zinc-500 hover:text-zinc-400 bg-transparent`}>
+                <button onClick={() => toggleSidebar()} className={`relative flex h-6 w-6 mr-2 justify-center items-center transition-all cursor-pointer rounded-md text-zinc-500 hover:text-zinc-400 bg-transparent`}>
                     <ChevronDown className='' width={18} height={18} />
                 </button>
-            </div><button onClick={() => toggleSidebar()} className={`${!isOpen ? 'opacity-100 pointer-events-auto flex' : 'opacity-0 pointer-events-none hidden'} relative flex flex-col items-center py-0.5 transition-all gap-0.5 rounded-md text-zinc-500 hover:text-zinc-400 bg-transparent hover:bg-zinc-800 active:scale-95`}>
+            </div>
+            <button onClick={() => toggleSidebar()} className={`${!isOpen ? 'opacity-100 pointer-events-auto flex cursor-pointer' : 'opacity-0 pointer-events-none hidden'} relative flex flex-col items-center py-0.5 transition-all gap-0.5 rounded-md text-zinc-500 hover:text-zinc-400 bg-transparent hover:bg-zinc-800 active:scale-95`}>
                 <Image priority={true} width={36} height={36} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.png'} />
                 <ChevronDown className='' width={18} height={18} />
             </button>
@@ -77,7 +78,7 @@ export const LinkBtn = (props: LinkBtnProps) => {
                 <span className={`absolute ${isOpen ? '-left-0.5 h-3 w-1' : 'justify-center items-center bottom-[-0.54rem] h-1 w-3'} transition-all ${currentRoute === props.label ? 'flex' : 'hidden'} rounded-lg btn-gradient2`}></span>
                 <span className={`${isOpen ? '' : 'hidden'} overflow-hidden font-medium text-sm`}>{props.label}</span>
             </Link>
-            <span className={`${isOpen ? 'hidden' : 'flex'} z-[100] transition-all absolute ${showLabel ? 'opacity-100 pointer-events-auto transition-all delay-1000' : 'opacity-0 pointer-events-none duration-100'} left-11 px-1 py-0.5 rounded text-xs bg-zinc-900 border border-zinc-800 text-zinc-500 shadow-md shadow-zinc-950`}>{props.label}</span>
+            <span className={`${isOpen ? 'hidden' : 'flex'} z-100 transition-all absolute ${showLabel ? 'opacity-100 pointer-events-auto transition-all delay-1000' : 'opacity-0 pointer-events-none duration-100'} left-11 px-1 py-0.5 rounded-sm text-xs bg-zinc-900 border border-zinc-800 text-zinc-500 shadow-md shadow-zinc-950`}>{props.label}</span>
         </button>
     )
 }
@@ -87,7 +88,7 @@ export const LinkBtn = (props: LinkBtnProps) => {
 export const ThemeToggle = (/* props: ThemeToggleProps */) => {
 
     return (
-        <button className='relative flex transition-all bg-zinc-100 text-zinc-500 justify-center items-center rounded-md active:scale-90 h-8 w-8 shadow shadow-zinc-400 hover:text-zinc-600 hover:shadow-md hover:shadow-zinc-400'>
+        <button className='relative flex transition-all bg-zinc-100 text-zinc-500 justify-center items-center rounded-md active:scale-90 h-8 w-8 shadow-sm shadow-zinc-400 hover:text-zinc-600 hover:shadow-md hover:shadow-zinc-400'>
             <Moon className='transition-all' width={22} height={22} />
         </button>
     )
@@ -129,7 +130,7 @@ export const Signout = () => {
                     </div>
                 </div>
                 <p className={`${isOpen ? 'w-fit' : 'max-w-0'} flex text-nowrap overflow-hidden my-auto text-xs text-zinc-500 hover:text-indigo-500 transition-all`}>{`Session life - ${timeLeftPrcnt}%`}</p>
-                <span className={`${isOpen ? 'hidden' : 'flex'} z-[100] transition-all absolute ${showLabel ? 'opacity-100 pointer-events-auto transition-all delay-1000' : 'opacity-0 pointer-events-none duration-100'} text-nowrap -top-6 left-4 px-1 py-0.5 rounded text-xs bg-zinc-900 border border-zinc-800 text-zinc-500 shadow-md shadow-zinc-950`}>{`Session life - ${timeLeftPrcnt}%`}</span>
+                <span className={`${isOpen ? 'hidden' : 'flex'} z-100 transition-all absolute ${showLabel ? 'opacity-100 pointer-events-auto transition-all delay-1000' : 'opacity-0 pointer-events-none duration-100'} text-nowrap -top-6 left-4 px-1 py-0.5 rounded-sm text-xs bg-zinc-900 border border-zinc-800 text-zinc-500 shadow-md shadow-zinc-950`}>{`Session life - ${timeLeftPrcnt}%`}</span>
             </button>
         </div>
     );

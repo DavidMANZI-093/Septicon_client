@@ -130,7 +130,7 @@ export function DataTable<TData, TValue>({
   return (
     <React.Fragment>
       {/* Item Deletion */}
-      <div className={`${delState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-4 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded bg-zinc-900 border border-zinc-800 z-20`}>
+      <div className={`${delState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-4 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded-sm bg-zinc-900 border border-zinc-800 z-20`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <Trash2 className="text-red-900" width={17} height={17} />
           <span className="relative flex text-zinc-500 font-medium text-sm">Confirm Deletion</span>
@@ -140,7 +140,7 @@ export function DataTable<TData, TValue>({
           <Trash2 className="text-red-800 -rotate-12" width={40} height={40} />
           <p className="text-sm">Are you sure you want to delete this item? Confirm with your password.</p>
         </div>
-        <div className="relative flex w-fit ml-20 border border-zinc-800 p-2 rounded bg-zinc-950 gap-1 text-xs font-medium">
+        <div className="relative flex w-fit ml-20 border border-zinc-800 p-2 rounded-sm bg-zinc-950 gap-1 text-xs font-medium">
           <Box width={16} height={16} />
           <p className="relative flex">- {itemName}</p>
         </div>
@@ -154,7 +154,7 @@ export function DataTable<TData, TValue>({
         </div>
       </div>
       {/* Item Edition */}
-      <div className={`${editState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-8 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded bg-zinc-900 border border-zinc-800 z-20`}>
+      <div className={`${editState ? 'absolute opacity-100' : 'hidden opacity-0'} transition-opacity flex-col gap-8 top-[50%] left-[50%] shadow-xl shadow-zinc-950 transform -translate-x-1/2 -translate-y-1/2 flex w-fit h-fit  rounded-sm bg-zinc-900 border border-zinc-800 z-20`}>
         <h2 className="relative flex items-center w-full h-fit gap-2 px-2 py-1">
           <Edit className="text-green-900" width={17} height={17} />
           <span className="relative flex text-zinc-500 font-medium text-sm">Editing Item Details</span>
@@ -164,18 +164,18 @@ export function DataTable<TData, TValue>({
           <Edit className="text-green-800 -rotate-12" width={40} height={40} />
           <p className="text-sm">You can provide new details to fields below.</p>
         </div>
-        <div className="relative flex flex-col w-fit ml-12 border border-zinc-800 p-2 rounded gap-4 text-sm">
+        <div className="relative flex flex-col w-fit ml-12 border border-zinc-800 p-2 rounded-sm gap-4 text-sm">
           <fieldset className='relative flex gap-2 items-center justify-between'>
             <label className="font-medium text-zinc-500" htmlFor="item_name">Item Name: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ itemIdN: itemIdN, newItemName: e.target.value, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="item_name" value={(newItemName ? newItemName : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' type="text" aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='New name' />
+            }} onChange={(e) => setNewItemData({ itemIdN: itemIdN, newItemName: e.target.value, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="item_name" value={(newItemName ? newItemName : "")} className='bg-transparent font-medium py-1! focus:outline-zinc-800! input-field' type="text" aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='New name' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
             <label className="font-medium text-zinc-500" htmlFor="reorder_point">Reorder Point: </label>
             <input style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ itemIdN: itemIdN, newItemName: newItemName, newRorderPoint: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="reorder_point" value={(newRorderPoint ? newRorderPoint : "")} className='bg-transparent font-medium !py-1 focus:!outline-zinc-800 input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
+            }} onChange={(e) => setNewItemData({ itemIdN: itemIdN, newItemName: newItemName, newRorderPoint: parseFloat(isNaN(parseFloat(e.target.value)) ? '0' : e.target.value), newUnitOfMeasure: newUnitOfMeasure, newItemDescription: newItemDescription })} id="reorder_point" value={(newRorderPoint ? newRorderPoint : "")} className='bg-transparent font-medium py-1! focus:outline-zinc-800! input-field' min={1} type="number" aria-autocomplete="none" autoComplete="off" inputMode="decimal" placeholder='0 or 0.0' />
           </fieldset>
           <fieldset className='relative flex gap-2 items-center justify-between'>
             <label className="font-medium text-zinc-500" htmlFor="unit_of_measure">Unit of Measurement: </label>
@@ -184,12 +184,12 @@ export function DataTable<TData, TValue>({
                 <SelectValue placeholder="Unit of measure" />
               </SelectTrigger>
               <SelectContent className="relative flex flex-col h-36 overflow-y-auto bg-zinc-900 shadow-lg shadow-zinc-950 border-zinc-800">
-                <SelectItem className="!text-xs font-medium rounded hover:bg-zinc-800" value="PCS">PCS</SelectItem>
-                <SelectItem className="!text-xs font-medium rounded hover:bg-zinc-800" value="PRS">PRS</SelectItem>
-                <SelectItem className="!text-xs font-medium rounded hover:bg-zinc-800" value="PKG">PKG</SelectItem>
-                <SelectItem className="!text-xs font-medium rounded hover:bg-zinc-800" value="MTR">MTR</SelectItem>
-                <SelectItem className="!text-xs font-medium rounded hover:bg-zinc-800" value="LTR">LTR</SelectItem>
-                <SelectItem className="!text-xs font-medium rounded hover:bg-zinc-800" value="KGS">KGS</SelectItem>
+                <SelectItem className="text-xs! font-medium rounded-sm hover:bg-zinc-800" value="PCS">PCS</SelectItem>
+                <SelectItem className="text-xs! font-medium rounded-sm hover:bg-zinc-800" value="PRS">PRS</SelectItem>
+                <SelectItem className="text-xs! font-medium rounded-sm hover:bg-zinc-800" value="PKG">PKG</SelectItem>
+                <SelectItem className="text-xs! font-medium rounded-sm hover:bg-zinc-800" value="MTR">MTR</SelectItem>
+                <SelectItem className="text-xs! font-medium rounded-sm hover:bg-zinc-800" value="LTR">LTR</SelectItem>
+                <SelectItem className="text-xs! font-medium rounded-sm hover:bg-zinc-800" value="KGS">KGS</SelectItem>
               </SelectContent>
             </Select>
           </fieldset>
@@ -197,7 +197,7 @@ export function DataTable<TData, TValue>({
             <label className="font-medium text-zinc-500" htmlFor="description">Description: </label>
             <Textarea value={(newItemDescription ? newItemDescription : "")} maxLength={60} style={{
               borderColor: '#27272a'
-            }} onChange={(e) => setNewItemData({ itemIdN: itemIdN, newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: e.target.value })} id="description" className='bg-transparent font-medium placeholder:font-normal -mt-1 !py-1 max-h-24 focus:ring-zinc-800 input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Description' />
+            }} onChange={(e) => setNewItemData({ itemIdN: itemIdN, newItemName: newItemName, newRorderPoint: newRorderPoint, newUnitOfMeasure: newUnitOfMeasure, newItemDescription: e.target.value })} id="description" className='bg-transparent font-medium placeholder:font-normal -mt-1 py-1! max-h-24 focus:ring-zinc-800 input-field' aria-autocomplete="none" autoComplete="off" inputMode="none" placeholder='Description' />
           </fieldset>
         </div>
         <div className="relative flex p-4 gap-2 justify-between">
@@ -211,7 +211,7 @@ export function DataTable<TData, TValue>({
           <Button2 disabeled={(password) ? false : true} spinner={isSpinning} value={"Update"} onClick={() => sendEdit()} />
         </div>
       </div>
-      <Table className={`relative ${delState || editState ? 'pointer-events-none blur-[1px]' : ''} flex rounded overflow-hidden border border-zinc-700 text-zinc-500 flex-col w-full h-full`}>
+      <Table className={`relative ${delState || editState ? 'pointer-events-none blur-[1px]' : ''} flex rounded-sm overflow-hidden border border-zinc-700 text-zinc-500 flex-col w-full h-full`}>
         <TableHeader className="relative flex w-full h-fit">
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow className="relative flex w-full h-8 items-center justify-evenly bg-zinc-800 border-zinc-700" key={headerGroup.id}>
@@ -233,7 +233,7 @@ export function DataTable<TData, TValue>({
         <TableBody className="relative flex flex-col h-full w-full overflow-y-auto">
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map((row) => (
-              <TableRow className="relative flex w-full h-8 items-center !border-t-0 !border-b justify-evenly transition-all hover:bg-zinc-800 border-zinc-800 group"
+              <TableRow className="relative flex w-full h-8 items-center border-t-0! border-b! justify-evenly transition-all hover:bg-zinc-800 border-zinc-800 group"
                 key={row.id}
                 data-state={row.getIsSelected() && "selected"}
               >
