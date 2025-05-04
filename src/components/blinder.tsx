@@ -13,11 +13,11 @@ const Blinder = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             {session?.loading ? (
-                <Image className='m-auto animate-pulse' fetchPriority='high' priority width={72} height={72} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.png'} />
+                <Image className='m-auto animate-pulse' fetchPriority='high' priority width={72} height={72} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.webp'} />
             ) : isValid && session?.user ? (
                 children
             ) : (
-                <Image className='m-auto animate-pulse' fetchPriority='high' priority width={72} height={72} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.png'} />
+                <Image className='m-auto animate-pulse' fetchPriority='high' priority width={72} height={72} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.webp'} />
             )}
         </>
     )
