@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown, LockKeyhole, LockKeyholeOpen, Moon } from 'lucide-react';
+import { ChevronDown, LockKeyhole, LockKeyholeOpen, /* Moon */ } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -44,7 +44,7 @@ export const SideBtn = (/* props: SideBtnProps */) => {
         <>
             <div className={`${isOpen ? 'opacity-100 pointer-events-auto flex' : 'opacity-0 pointer-events-none hidden'} relative flex w-full items-center justify-between`}>
                 <span className='items-center flex gap-1.5'>
-                    <Image priority={true} width={36} height={36} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.png'} />
+                    <Image priority={true} width={36} height={36} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.webp'} />
                     <h2 className='text-zinc-500 font-medium text-sm'>Septicon</h2>
                 </span>
                 <button onClick={() => toggleSidebar()} className={`relative flex h-6 w-6 mr-2 justify-center items-center transition-all cursor-pointer rounded-md text-zinc-500 hover:text-zinc-400 bg-transparent`}>
@@ -52,7 +52,7 @@ export const SideBtn = (/* props: SideBtnProps */) => {
                 </button>
             </div>
             <button onClick={() => toggleSidebar()} className={`${!isOpen ? 'opacity-100 pointer-events-auto flex cursor-pointer' : 'opacity-0 pointer-events-none hidden'} relative flex flex-col items-center py-0.5 transition-all gap-0.5 rounded-md text-zinc-500 hover:text-zinc-400 bg-transparent hover:bg-zinc-800 active:scale-95`}>
-                <Image priority={true} width={36} height={36} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.png'} />
+                <Image priority={true} width={36} height={36} alt="Septicon's Logo" src={'/favicon pack/Septicon - Logo.webp'} />
                 <ChevronDown className='' width={18} height={18} />
             </button>
         </>
@@ -85,15 +85,15 @@ export const LinkBtn = (props: LinkBtnProps) => {
 
 // type ThemeToggleProps = {}
 
-export const ThemeToggle = (/* props: ThemeToggleProps */) => {
+// export const ThemeToggle = (/* props: ThemeToggleProps */) => {
 
-    return (
-        <button className='relative flex transition-all bg-zinc-100 text-zinc-500 justify-center items-center rounded-md active:scale-90 h-8 w-8 shadow-sm shadow-zinc-400 hover:text-zinc-600 hover:shadow-md hover:shadow-zinc-400'>
-            <Moon className='transition-all' width={22} height={22} />
-        </button>
-    )
+//     return (
+//         <button className='relative flex transition-all bg-zinc-100 text-zinc-500 justify-center items-center rounded-md active:scale-90 h-8 w-8 shadow-sm shadow-zinc-400 hover:text-zinc-600 hover:shadow-md hover:shadow-zinc-400'>
+//             <Moon className='transition-all' width={22} height={22} />
+//         </button>
+//     )
 
-}
+// }
 
 import { useSessionContext } from '@/app/context/sessionContext';
 import { useSessionWatcher } from '@/hooks/watchDog';

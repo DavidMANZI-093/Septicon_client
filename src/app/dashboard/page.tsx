@@ -25,10 +25,10 @@ const Dashboard = (/* props: Props, children: React.ReactNode */) => {
 
   return (
     <Layout>
-      <div className='relative flex flex-col w-full h-full gap-2 px-0.5 overflow-y-auto'>
+      <div className='relative flex flex-col w-full h-full gap-2 px-0.5 overflow-x-hidden overflow-y-auto'>
         {/* {children} */}
         <SwapyBox />
-        <div className='absolute w-full h-full bg-transparent z-10 rounded-sm backdrop-brightness-75 backdrop-blur-[1px] transition-all duration-1000'>
+        <div className='absolute w-full h-full bg-transparent z-10 rounded-sm backdrop-brightness-60 backdrop-blur-[1.5px] transition-all duration-1000'>
           <BlankFeature />
         </div>
       </div>

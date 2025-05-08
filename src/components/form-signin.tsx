@@ -1,6 +1,15 @@
 "use client";
 
-import { UserRound, LucideLockKeyhole, KeyRound, Eye, EyeOff, ShieldAlert, ServerCog } from 'lucide-react'
+import {
+    UserRound,
+    LucideLockKeyhole,
+    KeyRound,
+    Eye,
+    EyeOff,
+    ShieldAlert,
+    ServerCog
+} from 'lucide-react'
+
 import React, { useState } from 'react'
 import { Button } from './ui/nui-button'
 import useShowPass from '@/hooks/passhider';
@@ -12,18 +21,14 @@ import { notify } from '@/services/notificationService';
 // type Props = {}
 
 const Auth = (/* props: Props */) => {
-
     const { isVisible, toggleVisibility } = useShowPass();
     const { isSpinning, toggleSpinner } = useRunSpinner();
-
     const [{ username, password }, setCredentials] = useState({ username: '', password: '' });
     if (typeof window !== 'undefined') sessionStorage?.removeItem('welcomeMsgShown');
-
     const onSubmit = async () => {
         username.trim();
         password.trim();
         const result = await signIn({ username, password });
-
         if (result?.status === 200) {
             setCredentials({ username: '', password: '' });
             redirect(`/dashboard`);
@@ -33,10 +38,21 @@ const Auth = (/* props: Props */) => {
             (document.getElementById('username') as HTMLInputElement)!.value = '';
             (document.getElementById('password') as HTMLInputElement)!.value = '';
             if (result?.status === 401) {
-                notify({ title: "Authentication Error", message: "Unauthorized credentials.", icon: ShieldAlert, iconColor: "text-red-600", barColor: "bg-red-600" });
+                notify({
+                    title: "Authentication Error",
+                    message: "Unauthorized credentials.",
+                    icon: ShieldAlert,
+                    iconColor: "text-red-600",
+                    barColor: "bg-red-600"
+                });
             } else if (result?.status === 500) {
-                notify({ title: "Server Error", message: "Internal server error. Please try again!", icon: ServerCog, iconColor: "text-blue-600", barColor: "bg-blue-600" });
-
+                notify({
+                    title: "Server Error",
+                    message: "Internal server error. Please try again!",
+                    icon: ServerCog,
+                    iconColor: "text-blue-600",
+                    barColor: "bg-blue-600"
+                });
             }
         }
     };
